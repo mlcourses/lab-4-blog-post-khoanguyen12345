@@ -1,17 +1,51 @@
-# Lab X: Doing stuff with hardware!
+# Lab 4: Microcontrollers, Sensors and Actuators
 
-Please write a blog post describing your lab here.
-
-This is just an example of how you might structure your blog post, feel free to edit as you wish. For example, you might divide the lab into different sections each with their own intro, instructions, results, and takeaways. Please see the rubric for details on how the post will be evaluated.
 
 ## Overview and Motivation
 This week we'll explore...
 
 ## Materials
 
-## Project Steps
+## Part 1: Exploration: Buzzer
 
-## Testing
+#### Goal
+
+#### Steps
+
+#### Testing
+
+
+## Part 1: Exploration: Servo
+
+#### Goal
+
+#### Steps
+
+#### Testing
+
+## Part 2: Exploration: Ultrasonic Sensor
+
+#### Goal
+
+#### Steps
+
+#### Testing
+
+## Part 3: Exploration: Photoresistor
+
+#### Goal
+
+#### Steps
+
+#### Testing
+
+## Part 4: Design: Distance detector with buzzer and ultrasonic sensor
+
+#### Goal
+
+#### Steps
+
+#### Testing
 
 ## Conclusion
 
