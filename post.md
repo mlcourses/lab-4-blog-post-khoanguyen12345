@@ -37,12 +37,15 @@ https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/260
 
 ## Part 2: Ultrasonic Sensor
 
-#### Goal
+The ultrasonic sensor emits an ultrasonic wave that reflects off of a surface and "receives" that signal. The time in between is then used to calculate the distance of the surface from the sensor. The code for the sensor can be seen below:
 
-#### Steps
+<img width="485" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/582a0447-3cbe-4b35-8448-4bcd1805beed">
 
-#### Testing
+When a high signal is sent to the ultrasonic sensor, it starts sending out an ultrasonic signal. The low signal puts the ultrasonic sensor on "receiving mode" and so, it would start "sensing" for the signal it sent out. pulseIn() is an Arduino function that takes in two arguments, the first being the pin number and the second being either HIGH or LOW. If it is set to HIGH, it means the Arduino unit will start timing when the signal goes from LOW to HIGH and will stop when the signal goes back to LOW.
 
+This is a video showing the ultrasonic sensor in effect, with a ruler:
+
+https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/8d9b2b23-10d3-4768-9e67-57fa3ae7bc9f
 
 ## Part 3: Distance detector with buzzer and ultrasonic sensor
 
