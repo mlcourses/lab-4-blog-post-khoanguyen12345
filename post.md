@@ -50,10 +50,32 @@ https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/8d9
 ## Part 3: Distance detector with buzzer and ultrasonic sensor
 
 #### Goal
+The goal of this part is to build a distance detector with an ultrasonic sensor and a buzzer. Part of this process is also determining a scale for the pitch of the buzzer in relation to the number produced by the ultrasonic sensor. If the object is further away from the ultrasonic sensor, it should produce a low humming sound, then get higher and louder as it approaches the sensor, though never going over 15000hz, the highest pitch humans can comfortably hear.
 
-#### Steps
+#### Continuous Range Distance Sensor
+We first had to "connect" the buzzer to the distance detector, or, in other words, connect the "distance" result of the ultrasonic sensor to the buzzer. The code below does this:
 
-#### Testing
+<img width="342" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/0096e2e7-5fa9-4229-a22c-8a7d61272e8e">
+
+We constructed this code using the two code snippets above. The first body of the code in void loop() is an exact copy of the body of the block of code in the ultrasonic sensor section above. The distance that is returned from the sensor is then put into the buzzer and multiplied by 100 to match the pitch range audible to humans, from 100hz at 1cm to 100000hz at 100cm. The video below shows this implementation:
+
+#### Video of buzzer with pitch louder as it is further away
+
+However, this does not work as we want. We instead want the buzzer to have a higher pitch as we get closer to the sensor and to have a lower, humming pitch as we get further away. This is an easy fix, however, as we can just take the maximum distance and subtract the current distance, thus "flipping" the scale of the pitch. The code below does this:
+
+<img width="355" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/0b5a2609-2964-4557-bdb8-2451a881506a">
+
+Instead of having distance * 100, we now have (100-distance)*100. This makes it so that the pitch increases as we get closer since distance will be a smaller number, and the pitch decreases as we get further away. We tested our continuous range distance sensor where the pitch decreases with distance. The distance sensor is explained below:
+
+#### Video of buzzer with pitch lower as it is further away
+
+One application of this circuit is to build a discrete scale for the distance sensor. A discrete scale is one that increases the pitch step by step, instead of having a continuous increase. 5-10cm would play one pitch, then 10-15cm would play another pitch, 15-20cm would play a third pitch, etc. This gave us the idea of music and musical notes.
+
+#### Video of discrete scale ultrasonic distance sensor
+
+We played twinkle twinkle little star with our discrete scale ultrasonic distance sensor!
+
+#### Video of twinkle twinkle little star
 
 ## Conclusion
 
