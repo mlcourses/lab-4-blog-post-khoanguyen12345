@@ -1,9 +1,9 @@
 # Lab 4: Microcontrollers, Sensors and Actuators
 
 ## Overview and Motivation
-This week, we explored actuators, or circuit components that interact with real life elements. We will then use these to create a distance detector that changes pitch based on how far an object is away from our sensor. The two actuators we will use are the ultrasonic distance sensor and the buzzer.
+This week, we explored actuators and sensors, circuit components that interact with real life elements. We will  use these to create a distance detector that changes pitch based on how far an object is away from our sensor. The two components we will use are the ultrasonic distance sensor and the buzzer.
 
-Actuators are important because they "actualize" our circuit. It means our circuits can have real world effects, either by reading outputs in the real world (ultrasonic sensor) or by playing a sound (buzzer). Therefore, it is important to explore the role of actuators in circuits. Plus, they are realy cool!
+Actuators and sensors are important because they "actualize" our circuit. It means our circuits can have real world effects, either by detecting inputs from the real world (ultrasonic sensor) or by playing a sound (buzzer). Therefore, it is important to explore the role of actuators and sensors in circuits. Plus, they are realy cool!
 
 ## Materials
 1. PB-503 (breadboard)
@@ -69,16 +69,24 @@ Instead of having distance * 100, we now have (100-distance)*100. This makes it 
 
 #### Video of buzzer with pitch lower as it is further away
 
-One application of this circuit is to build a discrete scale for the distance sensor. A discrete scale is one that increases the pitch step by step, instead of having a continuous increase. 5-10cm would play one pitch, then 10-15cm would play another pitch, 15-20cm would play a third pitch, etc. This gave us the idea of music and musical notes.
+One application of this circuit is to build a discrete scale for the distance sensor. A discrete scale is one that increases the pitch step by step, instead of having a continuous increase. 5-10cm would play one pitch, then 10-15cm would play another pitch, 15-20cm would play a third pitch, etc. This gave us the idea of music and musical notes. This required us to research more about musical notes. The graph below (taken from Produce Like a Pro) shows the different octaves, notes and their frequencies.
+
+![image](https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/0d5c19ab-32b4-469b-bf36-cba8e129ce0c)
+
+We decided that we wanted our musical notes to be in octave 4, meaning that frequencies would range from 261hz to 494hz. We also decided that 5cm would equal one note change. Therefore, we had the following code.
+
+<img width="367" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/550d9df1-6458-4a63-82cd-1ca639c96b31">
+
+Notice the conversion function. It floor divides the distance by 5, the  multiplies it by 17. This means that the pitch will only change by 17 whenever there is an increment of 5 from the sensor. This would make the increases discrete. The function also adds 261 to the result because 261 is the starting frequency. We then tone the buzzer with the result of our conversion algorithm. Below is a video of it in action.
 
 #### Video of discrete scale ultrasonic distance sensor
 
-We played twinkle twinkle little star with our discrete scale ultrasonic distance sensor!
+We looked up the notes to Twinkle Twinlle Little Star and "played" it with our distance sensor!
 
 #### Video of twinkle twinkle little star
 
 ## Conclusion
-
+In conclusion, actuators and sensors can be wire to the circuit to read real-world inputs. We demonstrated the capabilities of them through our discrete scale ultrasonic distance sensor. There are many other actuators and sensors (e.g light sensor, servo) that can be used to accomplish different tasks. Through this lab, we also learnt how to connect the output of a sensor as the input of an actuator. 
 
 
 
