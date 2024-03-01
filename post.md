@@ -57,9 +57,7 @@ We first had to "connect" the buzzer to the distance detector, or, in other word
 
 <img width="342" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/0096e2e7-5fa9-4229-a22c-8a7d61272e8e">
 
-We constructed this code using the two code snippets above. The first body of the code in void loop() is an exact copy of the body of the block of code in the ultrasonic sensor section above. The distance that is returned from the sensor is then put into the buzzer and multiplied by 100 to match the pitch range audible to humans, from 100hz at 1cm to 100000hz at 100cm. The video below shows this implementation:
-
-#### Video of buzzer with pitch louder as it is further away
+We constructed this code using the two code snippets above. The first body of the code in void loop() is an exact copy of the body of the block of code in the ultrasonic sensor section above. The distance that is returned from the sensor is then put into the buzzer and multiplied by 100 to match the pitch range audible to humans, from 100hz at 1cm to 100000hz at 100cm.
 
 However, this does not work as we want. We instead want the buzzer to have a higher pitch as we get closer to the sensor and to have a lower, humming pitch as we get further away. This is an easy fix, however, as we can just take the maximum distance and subtract the current distance, thus "flipping" the scale of the pitch. The code below does this:
 
@@ -67,7 +65,7 @@ However, this does not work as we want. We instead want the buzzer to have a hig
 
 Instead of having distance * 100, we now have (100-distance)*100. This makes it so that the pitch increases as we get closer since distance will be a smaller number, and the pitch decreases as we get further away. We tested our continuous range distance sensor where the pitch decreases with distance. The distance sensor is explained below:
 
-#### Video of buzzer with pitch lower as it is further away
+https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/c4a94d91-a8c4-44d8-9313-b52c63affcbc
 
 One application of this circuit is to build a discrete scale for the distance sensor. A discrete scale is one that increases the pitch step by step, instead of having a continuous increase. 5-10cm would play one pitch, then 10-15cm would play another pitch, 15-20cm would play a third pitch, etc. This gave us the idea of music and musical notes. This required us to research more about musical notes. The graph below (taken from Produce Like a Pro) shows the different octaves, notes and their frequencies.
 
@@ -77,13 +75,9 @@ We decided that we wanted our musical notes to be in octave 4, meaning that freq
 
 <img width="367" alt="image" src="https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/550d9df1-6458-4a63-82cd-1ca639c96b31">
 
-Notice the conversion function. It floor divides the distance by 5, the  multiplies it by 17. This means that the pitch will only change by 17 whenever there is an increment of 5 from the sensor. This would make the increases discrete. The function also adds 261 to the result because 261 is the starting frequency. We then tone the buzzer with the result of our conversion algorithm. Below is a video of it in action.
+Notice the conversion function. It floor divides the distance by 5, the  multiplies it by 17. This means that the pitch will only change by 17 whenever there is an increment of 5 from the sensor. This would make the increases discrete. The function also adds 261 to the result because 261 is the starting frequency. We then tone the buzzer with the result of our conversion algorithm. Below is a video of it in action, playing Twinkle Twinkle Little Star!
 
-#### Video of discrete scale ultrasonic distance sensor
-
-We looked up the notes to Twinkle Twinlle Little Star and "played" it with our distance sensor!
-
-#### Video of twinkle twinkle little star
+https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/4e6c41c2-cc78-4055-9803-0dc417c1778e
 
 ## Conclusion
 In conclusion, actuators and sensors can be wire to the circuit to read real-world inputs. We demonstrated the capabilities of them through our discrete scale ultrasonic distance sensor. There are many other actuators and sensors (e.g light sensor, servo) that can be used to accomplish different tasks. Through this lab, we also learnt how to connect the output of a sensor as the input of an actuator. 
