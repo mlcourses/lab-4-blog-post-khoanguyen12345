@@ -29,9 +29,11 @@ Another way to tone the buzzer using the Arduino is to use the tone() function. 
 These are the videos testing the buzzer with the square function generator and the Arduino:
 
 With square function generator:
+
 https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/05b6322d-1c1f-40bc-8caa-2e20c8304c4f
 
 With arduino:
+
 https://github.com/mlcourses/lab-4-blog-post-khoanguyen12345/assets/67582698/2604b2b2-c265-4272-ade1-c1edd22e37f4
 
 
